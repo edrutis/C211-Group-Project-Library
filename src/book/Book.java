@@ -16,6 +16,8 @@ public class Book
         this.id=id;
         this.availability=availability;
     }
+    
+    // set & get methods
    
     //returns all attributes of one book
     @Override
