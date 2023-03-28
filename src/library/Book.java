@@ -17,12 +17,11 @@ public class Book
         this.availability=availability;
     }
     
-  // set & get methods
+  //set methods
     public void setTitle(String title)
     {
         this.title=title;
     }
-    
      public void setAuthor(String author)
     {
        this.author=author;
@@ -35,12 +34,12 @@ public class Book
     {
         this.availability=availability;
     }
-      
+    
+    //get methods
     public String getTitle()
     {
         return title;
     }
-    
      public String getAuthor()
     {
         return author;
