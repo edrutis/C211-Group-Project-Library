@@ -17,7 +17,23 @@ public class Book
         this.availability=availability;
     }
     
-    // set & get methods
+    // set methods
+    public void setTitle(String title)
+    {
+        this.title=title;
+    }
+     public void setAuthor(String author)
+    {
+       this.author=author;
+    }
+    public void setID(String id)
+    {
+        this.id=id;
+    }
+    public void setAvailability(String availability)
+    {
+        this.availability=availability;
+    }
    
     //returns all attributes of one book
     @Override
