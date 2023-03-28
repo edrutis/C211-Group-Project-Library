@@ -34,6 +34,26 @@ public class Book
     {
         this.availability=availability;
     }
+    
+    
+    //get methods
+    public String getTitle()
+    {
+        return title;
+    }
+     public String getAuthor()
+    {
+        return author;
+    }
+    public String getID()
+    {
+        return id;
+    }
+    public String getAvailability()
+    {
+        return availability;
+    } 
+    
    
     //returns all attributes of one book
     @Override
