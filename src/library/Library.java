@@ -1,46 +1,71 @@
+/*
+	Author: Emily Reynolds
+	Last Updated: 20230423
+
+*/ 
+
 package library;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.HashMap;
 
 public class Library {
 
-	List<Patron> patrons;
-	List<Book> books;
+	HashMap<Integer, Patron> patrons;
+	HashMap<String, Book> books;
 	
 	Library() {
-		this.books = new ArrayList<Book>();
-		this.patrons = new ArrayList<Patron>();
+		this.books = new HashMap<String, Book>();
+		this.patrons = new HashMap<Integer, Patron>();
 	}
 	
-	Library(List<Book> books) {
-		this.books = books;
-		this.patrons = new ArrayList<Patron>();
-	}
-	
-	Library(List<Patron> patrons) {
-		this.patrons = patrons;
-		this.books = new ArrayList<Book>();
 
-	}
 	
-	Library(List<Book> books, List<Patron> patrons) {
+	Library(HashMap<String, Book> books, HashMap<Integer, Patron> patrons) {
 		this.patrons = patrons;
 		this.books = books;
 	}
 	
-	void newBook(Book book) {}
+	void newBook(Book book) {
+		this.books.put(book.getID(), book);
+	}
 	
-	void newPatron(Patron patron) {}
+	void newPatron(Patron patron) {
+		this.patrons.put(patron.getPatronId(), patron);
+	}
 	
-	void newBooks(List<Book> books) {}
+	void newBooks(List<Book> books) {
+		for (Book book: books) {
+			this.books.put(book.getID(), book);
+		}
+	}
 	
-	void newPatrons(List<Patron> patrons) {}
+	void newPatrons(List<Patron> patrons) {
+		for (Patron patron: patrons) {
+			this.patrons.put(patron.getPatronId(), patron);
+		}
+	}
 	
-	void outputPatrons() {}
+	void outputPatrons() {
+		System.out.println(this.patrons);
+	}
 	
-	void outputBooks() {}
+	void outputBooks() {
+		System.out.println(this.books);
+	}
 	
-	void checkOutBooks(String patronID, int[] bookIDs) {}
+	void checkOutBooks(int patronID, String[] bookIDs) {
+		Patron tempPatron = this.patrons.get(patronID);
+		for (String book: bookIDs) {
+			tempPatron.checkOutBook(this.books.get(book));
+			this.books.remove(book);
+		}
+		this.patrons.put(patronID, tempPatron);
+	}
+
+	void returnBooks(int patronID) {
+		this.newBooks(this.patrons.get(patronID).returnAllBooks());
+	}
+
 }
 

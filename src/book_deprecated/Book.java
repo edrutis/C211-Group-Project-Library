@@ -1,4 +1,4 @@
-package book;
+package book_deprecated;
 
 public class Book
 {

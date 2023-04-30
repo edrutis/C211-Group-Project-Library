@@ -1,4 +1,4 @@
-package book;
+package book_deprecated;
 
 import java.util.ArrayList;
 

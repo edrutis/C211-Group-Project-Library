@@ -1,12 +1,15 @@
 // author Sam Allen
 // C211 Spring 2023
 // Project Phase 2
-
+// Last updated by Emily Reynolds
+// Last update 20230430
 // specs documentation url //
 
 // https://www.cs.iusb.edu/~dvrajito/teach/c211/phase2.html
 
 package library;
+
+import java.util.ArrayList;
 
 public class Patron 
 {
@@ -26,7 +29,9 @@ public class Patron
 	// patron may be responsible for, 
 	// like children or other dependents
 	Patron[] family;
-	
+
+	//Currently Checked out books will be placed in this array
+	ArrayList<Book> checkedOutBooks;
 	// constructors // 
 	
 	// 1. 
@@ -97,5 +102,20 @@ public class Patron
 	void updateBalance()
 	{
 		
+	}
+
+	int getPatronId() {
+		return this.patronId;
+	}
+
+	void checkOutBook(Book toCheckOut){
+		this.checkedOutBooks.add(toCheckOut);
+	}
+
+	ArrayList<Book> returnAllBooks() {
+		ArrayList<Book> toReturn = new ArrayList<Book>();
+		toReturn.addAll(this.checkedOutBooks);
+		checkedOutBooks.clear();
+		return toReturn;
 	}
 }
