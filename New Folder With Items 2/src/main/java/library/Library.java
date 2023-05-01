@@ -56,7 +56,7 @@ public class Library {
 	}
 	
 	String outputPatrons() {
-		System.out.println(this.patrons);
+		System.out.println(this.patrons.toString());
                 return this.patrons.toString();
 	}
 	
