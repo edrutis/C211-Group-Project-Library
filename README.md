@@ -2,7 +2,7 @@
 
 ## Group Members
 * Emily Reynolds - Library Class
-* Sam Allen - Patron Class
+* Sam Allen - Patron Class, GUI
 * Monica Galvez - Book Class
 
 ## Project Details
