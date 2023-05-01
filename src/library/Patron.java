@@ -1,11 +1,10 @@
 // author Sam Allen
 // C211 Spring 2023
 // Project Phase 2
-// Last updated by Emily Reynolds
-// Last update 20230430
+
 // specs documentation url //
 
-// https://www.cs.iusb.edu/~dvrajito/teach/c211/phase2.html
+// https://www.cs.iusb.edu/~dvrajito/teach/c211/teamProjects.html
 
 package library;
 
