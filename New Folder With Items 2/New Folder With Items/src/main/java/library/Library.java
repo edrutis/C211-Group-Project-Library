@@ -55,14 +55,12 @@ public class Library {
 		}
 	}
 	
-	String outputPatrons() {
+	void outputPatrons() {
 		System.out.println(this.patrons);
-                return this.patrons.toString();
 	}
 	
-	String outputBooks() {
+	void outputBooks() {
 		System.out.println(this.books);
-                return this.books.toString();
 	}
 	
 	boolean checkOutBooks(int patronID, ArrayList<String> bookIDs) {
