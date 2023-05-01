@@ -1,7 +1,7 @@
 # C211-Group-Project
 
 ## Group Members
-* Emily Reynolds - Library Class
+* Emily Reynolds - Implemented library class and made some updates to patron to ensure interop
 * Sam Allen - Patron Class, GUI
 * Monica Galvez - Book Class
 
