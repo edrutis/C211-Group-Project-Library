@@ -1,4 +1,4 @@
-package book_deprecated;
+package library;
 
 public class Book
 {
@@ -17,7 +17,18 @@ public class Book
         this.availability=availability;
     }
     
-    // set methods
+    //toString
+    public String toString()
+    {
+        String result;
+        result = "Title: " + getTitle();
+        result = result + "\nAuthor: " + getAuthor();
+        result = result + "\nID: " + getID();
+        result = result + "\nAvailability: " + getAvailability() + "\n";
+        return result;
+    }
+    
+  //set methods
     public void setTitle(String title)
     {
         this.title=title;
@@ -34,7 +45,6 @@ public class Book
     {
         this.availability=availability;
     }
-    
     
     //get methods
     public String getTitle()
@@ -53,16 +63,5 @@ public class Book
     {
         return availability;
     } 
-    
-   
-    //returns all attributes of one book
-    @Override
-    public String toString()
-    {
-        return "id: " + id + "\n" +
-               "title: " + title + "\n" +
-               "author: " + author + "\n" +
-               "availability: " + availability + "\n";
-    }
     
 }

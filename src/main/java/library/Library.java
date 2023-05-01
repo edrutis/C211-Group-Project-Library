@@ -6,6 +6,7 @@
 
 package library;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.HashMap;
 
@@ -30,8 +31,16 @@ public class Library {
 		this.books.put(book.getID(), book);
 	}
 	
-	void newPatron(Patron patron) {
-		this.patrons.put(patron.getPatronId(), patron);
+	boolean newPatron(Patron patron) {
+            try
+            {
+                this.patrons.put(patron.getPatronId(), patron);
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+            return true;
 	}
 	
 	void newBooks(List<Book> books) {
@@ -46,25 +55,45 @@ public class Library {
 		}
 	}
 	
-	void outputPatrons() {
+	String outputPatrons() {
 		System.out.println(this.patrons);
+                return this.patrons.toString();
 	}
 	
-	void outputBooks() {
+	String outputBooks() {
 		System.out.println(this.books);
+                return this.books.toString();
 	}
 	
-	void checkOutBooks(int patronID, String[] bookIDs) {
-		Patron tempPatron = this.patrons.get(patronID);
+	boolean checkOutBooks(int patronID, ArrayList<String> bookIDs) {
+            try
+            {
+                Patron tempPatron = this.patrons.get(patronID);
 		for (String book: bookIDs) {
 			tempPatron.checkOutBook(this.books.get(book));
 			this.books.remove(book);
 		}
 		this.patrons.put(patronID, tempPatron);
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+            return true;
+		
 	}
 
-	void returnBooks(int patronID) {
-		this.newBooks(this.patrons.get(patronID).returnAllBooks());
+	boolean returnBooks(int patronID) {
+            try
+            {
+                this.newBooks(this.patrons.get(patronID).returnAllBooks());
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+            return true;
+		
 	}
 
 }

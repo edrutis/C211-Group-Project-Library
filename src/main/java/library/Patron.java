@@ -154,7 +154,7 @@ public class Patron
 	// 6. 
 	// add book to list or checked out books
 	// return true if successful 
-	boolean checkOutBook(Book toCheckOut)
+	public boolean checkOutBook(Book toCheckOut)
 	{	
 		try
 		{
@@ -184,6 +184,21 @@ public class Patron
 			return toReturn;
 		}
 	}
+        
+        // 8. 
+        // override toString
+        @Override
+        public String toString()
+        {
+            String result;
+            result = "Name: " + getFirstName() + " " + getLastName();
+            result = result + "\nAddress: " + getStreetAddress();
+            result = result + "\nZip: " + getZipCode();
+            result = result + "\nPhone: " + getPhoneNumber();
+            result = result + "\nPatron ID: " + getPatronId();
+            result = result + "\nBalance: $" + getBalance() + "\n";
+            return result;
+        }
 	
 	// setters and getters //
 	
